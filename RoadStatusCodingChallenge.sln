@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatusCodingChallenge", "RoadStatusCodingChallenge\RoadStatusCodingChallenge.csproj", "{EE2F8A13-7FA9-40DF-81D6-681549E0312F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestRoadStatusCodingChallenge", "UnitTestRoadStatusCodingChallenge\UnitTestRoadStatusCodingChallenge.csproj", "{FAAA697E-C88C-4ACD-86E4-4CB320E173DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EE2F8A13-7FA9-40DF-81D6-681549E0312F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2F8A13-7FA9-40DF-81D6-681549E0312F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2F8A13-7FA9-40DF-81D6-681549E0312F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAAA697E-C88C-4ACD-86E4-4CB320E173DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAAA697E-C88C-4ACD-86E4-4CB320E173DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAAA697E-C88C-4ACD-86E4-4CB320E173DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAAA697E-C88C-4ACD-86E4-4CB320E173DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
