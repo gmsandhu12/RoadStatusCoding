@@ -12,7 +12,7 @@ namespace RoadStatusCodingChallenge
     public class GetRoadStatus
     {
         public static HttpClient client = new HttpClient(); 
-
+        
         public RoadStatus Start(string roadName)
         {
             RoadStatus resultRoad = new RoadStatus();
