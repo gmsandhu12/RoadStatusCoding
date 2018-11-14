@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadStatusCodingChallenge",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestRoadStatusCodingChallenge", "UnitTestRoadStatusCodingChallenge\UnitTestRoadStatusCodingChallenge.csproj", "{FAAA697E-C88C-4ACD-86E4-4CB320E173DA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{169DC931-3CDB-4E93-9661-5A56BC73079F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\README.md = ..\..\..\Desktop\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
