@@ -3,28 +3,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Net;
 
 namespace RoadStatusCodingChallenge
 {
     public class GetRoadStatus
     {
-        public static HttpClient client = new HttpClient(); 
+        public static HttpClient client = new HttpClient();
+        public RoadStatus resultRoad = new RoadStatus();
+        public string APIKey = ConfigurationManager.AppSettings["APIKey"];
+        public string AppId = ConfigurationManager.AppSettings["ApplicationId"];
+        public string address = "https://api.tfl.gov.uk/Road/";
         
-        public RoadStatus Start(string roadName)
+        public virtual RoadStatus Start(string roadName)
         {
-            RoadStatus resultRoad = new RoadStatus();
-                string address = "https://api.tfl.gov.uk/Road/";
-                var APIKey = ConfigurationManager.AppSettings["APIKey"];
-                var AppId = ConfigurationManager.AppSettings["ApplicationId"];
+            SecureCertificateBypass();
 
-                string requestparam = roadName + "?app_id=" + AppId + "&app_key=" + APIKey;
-
-                Task.Run(async () =>
+            Task.Run(async () =>
                 {
-                    var response = await client.GetAsync(new Uri(address + requestparam));
+                   var response = await client.GetAsync(new Uri(getRequestString(roadName)));
 
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
@@ -40,9 +39,21 @@ namespace RoadStatusCodingChallenge
 
                 }).GetAwaiter().GetResult();
 
-            
-
             return resultRoad;
+        }
+
+        public string getRequestString(string roadName)
+        {
+            return address + roadName + "?app_id=" + AppId + "&app_key=" + APIKey;
+        }
+
+        public virtual void SecureCertificateBypass()
+        {
+            ServicePointManager.ServerCertificateValidationCallback +=
+           (message, cert, chain, errors) => true;
+            ServicePointManager.SecurityProtocol =
+                SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls |
+                SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
         }
     }
 }
